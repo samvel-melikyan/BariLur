@@ -1,30 +1,33 @@
 import unittest
 
-from selenium.webdriver.chrome import webdriver
+from selenium import webdriver
 
 from BariLur.util.BaseDriver import BaseDriver
 
 
-class BaseTest(unittest.TestCase):
-    BASE_URL = "www.google.com"
+class BaseTest(unittest.TestCase, BaseDriver):
+    BASE_URL = "https://en.wikipedia.org/wiki/Clement_of_Rome"
+    driver = webdriver
+    @classmethod
+    def setUp(self):
+        self.driver = webdriver.Firefox()
+
+
 
     @classmethod
-    def setUp(cls,):
-        cls.driver = BaseDriver.getDriver()
-        cls.driver.get(cls.BASE_URL)
+    def tearDown(self):
+        if self.driver is not None:
+            self.driver.quit()
 
-
-    @classmethod
-    def tearDown(cls):
-        if cls.driver != None:
-            cls.driver
-            cls.setDriver(None)
 
 
     def test_1(self):
-        if 1 == 0:
+        self.driver.get(self.BASE_URL)
+        if 1 == 1:
+            print(True)
+        else:
             print(False)
-        print(True)
+
 
 
 

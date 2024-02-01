@@ -1,16 +1,16 @@
-import null as null
+
 from selenium import webdriver
 
 
 class BaseDriver:
     """Initializing a web driver with its attributes"""
-    driver = null
+    driver = None
 
-    def setDriver(self, driver=webdriver):
+    def setDriver(self, driver):
         self.driver = driver
 
     def getDriver(self):
-        if self.driver == null:
+        if self.driver is None:
             self.driver = webdriver.Firefox()
         return self.driver
 

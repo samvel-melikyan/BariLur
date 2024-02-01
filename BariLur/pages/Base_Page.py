@@ -16,11 +16,11 @@ class BasePage(BaseDriver):
 
     def __init__(self):
         super().__init__()
-        self.home = self.driver.find_element(By.CSS_SELECTOR, "#container > div > ul > li.current > a")
-        self.archive = self.driver.find_element(By.CSS_SELECTOR, "#container > div:nth-child(1) > ul > li.current > a")
-        self.links = self.driver.find_element(By.CSS_SELECTOR, "#container > div:nth-child(1) > ul > li:nth-child(5) > a")
-        self.request = self.driver.find_element(By.CSS_SELECTOR, "#container > div > ul > li.current > a")
-        self.about = self.driver.find_element(By.CSS_SELECTOR, "#container > div > ul > li:nth-child(7) > a")
+        self.home = (By.CSS_SELECTOR, "#container > div > ul > li.current > a")
+        self.archive = (By.CSS_SELECTOR, "#container > div:nth-child(1) > ul > li.current > a")
+        self.links = (By.CSS_SELECTOR, "#container > div:nth-child(1) > ul > li:nth-child(5) > a")
+        self.request = (By.CSS_SELECTOR, "#container > div > ul > li.current > a")
+        self.about = (By.CSS_SELECTOR, "#container > div > ul > li:nth-child(7) > a")
 
     def home(self):
         self.home.click()

@@ -6,7 +6,7 @@ from BariLur.util.BaseDriver import BaseDriver
 
 
 class BaseTest(unittest.TestCase, BaseDriver):
-    BASE_URL = "https://en.wikipedia.org/wiki/Clement_of_Rome"
+    BASE_URL = "https://barilur.org/"
     driver = webdriver
     @classmethod
     def setUp(self):

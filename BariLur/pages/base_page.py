@@ -1,6 +1,8 @@
 import main
 from selenium.webdriver.common.by import By
 
+from BariLur.util.custom_element_actions import MyActions
+
 
 # from BariLur.pages.HomePage import Home
 # from BariLur.pages.ArchivePage import Archive
@@ -14,7 +16,7 @@ class BasePage:
 
 
         # self.home = main.driver.find_element(By.CSS_SELECTOR, "#container > div > ul > li.current > a")
-        # self.archive = main.driver.find_element(By.CSS_SELECTOR, "#container > div:nth-child(1) > ul > li.current > a")
+        self.archive = main.driver.find_element(By.CSS_SELECTOR, "#root > div > div.Header > nav > a:nth-child(2)")
         # self.links = main.driver.find_element(By.CSS_SELECTOR, "#container > div:nth-child(1) > ul > li:nth-child(5) > a")
         # self.request = main.driver.find_element(By.CSS_SELECTOR, "#container > div > ul > li.current > a")
         # self.about = main.driver.find_element(By.CSS_SELECTOR, "#container > div > ul > li:nth-child(7) > a")
@@ -23,6 +25,9 @@ class BasePage:
     def text(self):
         print("-BasePage-")
         return self.home_text.text
+
+
+
 
     # def home(self):
     #     self.home.click()

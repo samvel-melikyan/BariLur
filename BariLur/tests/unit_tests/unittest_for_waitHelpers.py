@@ -10,7 +10,7 @@ import main
 class TestWaitHelper(unittest.TestCase):
     def setUp(self):
         self.driver = main.driver
-        self.driver.get("C:\Users\User\PycharmProjects\Bari Lur\BariLur\tests\unittest_file.html")  # Replace 'path_to_test_page' with the actual path
+        self.driver.get("Bari Lur/BariLur/tests/unit_tests/unittest_file.html")
 
     def test_until_title_is(self):
         WebDriverWait(self.driver, 10).until(EC.title_is("Test Page"))

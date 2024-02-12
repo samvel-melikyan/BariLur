@@ -11,11 +11,11 @@ import main
 class Home(BasePage):
     def __init__(self):
         super().__init__()
-        self.papers = main.driver.find_elements(By.CSS_SELECTOR, "#root > div > div.HomePage > div.CurrentJournals > div") #//*[@id='root']/div/div[2]/div[2]/div")
+        self.papers = main.driver.find_elements(By.CLASS_NAME, "box")
 
 
     def paper_list(self):
-        WaitHelper().until_visible((By.CSS_SELECTOR, "#root > div > div.HomePage > div.CurrentJournals > div"))
+        MyActions().find_elements((By.CLASS_NAME, "box"))
         return self.papers
 
     def archive(self):

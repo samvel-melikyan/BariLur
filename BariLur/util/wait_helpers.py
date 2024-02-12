@@ -6,7 +6,6 @@ import main
 
 class WaitHelper:
     time = 15
-    wait = WebDriverWait(main.driver, time)
 
     def until_title_is(self, element):
         """waits until the title of the current page equals the specified title"""

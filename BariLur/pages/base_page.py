@@ -21,6 +21,8 @@ class BasePage:
         # self.request = main.driver.find_element(By.CSS_SELECTOR, "#container > div > ul > li.current > a")
         # self.about = main.driver.find_element(By.CSS_SELECTOR, "#container > div > ul > li:nth-child(7) > a")
         self.home_text = main.driver.find_element(By.CLASS_NAME, 'content')
+        # self.titles = main.driver.find_elements(By.CSS_SELECTOR, "#root > div > div.Header > nav > a")
+
 
     def text(self):
         print("-BasePage-")
@@ -32,7 +34,8 @@ class BasePage:
     # def home(self):
     #     self.home.click()
     #     return Home()
-    #
+    def archive(self):
+        MyActions().click(self.archive)
     # def archive(self):
     #     self.archive.click()
     #     return Archive()

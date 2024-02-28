@@ -4,7 +4,7 @@ from BariLur.tests.base_test import BaseTest
 
 class TestHome(BaseTest):
 
-    def test_journals_number(self):
+    def test_journals_amount(self):
         home = Home()
         length = len(home.journals_list())
         print(length)
@@ -13,7 +13,8 @@ class TestHome(BaseTest):
     def test_journals_representation(self):
         home = Home()
         # print(len(home.journals()))
-        print(len(home.journal_title()))
+        home.journal_title()
+        # print(f"jurnal_title - {len(home.journal_title())} ")  #{len(home.journal_title())}
         # print(home.journals()[0]["title"])
 
 

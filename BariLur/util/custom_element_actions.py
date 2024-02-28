@@ -1,4 +1,6 @@
 from BariLur.util.wait_helpers import WaitHelper
+
+
 class MyActions:
     wait = WaitHelper()
     def click(self, element):
@@ -11,7 +13,7 @@ class MyActions:
         element.send_keys(text)
 
     def get_text(self, element):
-        self.wait.until_text_to_be_present()
+        WaitHelper().until_visible_of(element)
         return element.text
 
     def get_attribute(self, element, attribute):

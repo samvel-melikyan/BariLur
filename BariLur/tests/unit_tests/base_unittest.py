@@ -25,7 +25,7 @@ class UnitTest(BaseTest):
             print("Doesn't work")
         else:
             print("Working...")
-        # print(self.base.text())   # unicode error: did not understood armenian letters
+        # print(self.base.text())   # unicode error: did not understood armenian letters  #solution: encoded_text = text.encode('utf-8')
 
     def test_3(self):
         print("+accessing to method and element through inheritance: test n3")

@@ -6,6 +6,7 @@ import main
 class BaseDriver:
     """Initializing a web driver with its attributes"""
 
+
     @staticmethod
     def set_driver_none(self):
         main.driver = None

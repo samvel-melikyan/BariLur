@@ -40,10 +40,11 @@ class WaitHelper:
         """waits until all elements matching the locator are present in the DOM."""
         wait = WebDriverWait(main.driver, self.time)
         wait.until(EC.presence_of_all_elements_located(location))
-    def until_text_to_be_present(self, element):
+
+    def until_text_to_be_present(self, element, text):
         """waits until the specified text is present within the element."""
         wait = WebDriverWait(main.driver, self.time)
-        wait.until(EC.text_to_be_present_in_element(element))
+        wait.until(EC.text_to_be_present_in_element(element, text))
 
     def until_text_to_be_present_in_element_value(self, element):
         """waits until the specified text is present within the value attribute of the element."""

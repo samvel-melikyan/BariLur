@@ -8,8 +8,10 @@ from BariLur.util.custom_element_actions import MyActions
 class Home(BasePage):
     def __init__(self):
         super().__init__()
-        self.journal = main.driver.find_elements(By.CLASS_NAME, "box")
-        self.titles = main.driver.find_elements(By.CLASS_NAME, "title")
+        self.journal = main.driver.find_elements(By.CSS_SELECTOR, ".CurrentJournals.box.title")
+        # self.journal1 = main.driver.find_element(By.CSS_SELECTOR, "div.HomePage > div.CurrentJournals > div:nth-child(1) > p")
+        self.text = main.driver.find_element(By.XPATH, "//*[@id='root']/div/div[2]/div[1]/p[1]/b")
+        self.titles = main.driver.find_elements(By.CSS_SELECTOR, "#root > div > div.HomePage > div.CurrentJournals > div > p") # (By.XPATH, "//*[@id='root']/div/div[2]/div[2]/div/p/text") #
         self.journal_list = []
 
 
@@ -18,11 +20,15 @@ class Home(BasePage):
 
     def journal_title(self):
         titles = []
-        print(titles)
-        print(self.titles)
-        for i in self.titles:
-            titles.append(MyActions.get_text(i))
-        print(f"after loop {titles}")
+        # print(titles)
+        # print(self.titles)
+        # for i in self.titles:
+        #     titles.append(MyActions.get_text(i))
+        # for i in self.journal:
+        #     a = i.text
+        #     print(f"#{a.encode()}")
+        print(self.text.text.encode('utf-8'))
+        # print(f"after loop {titles}")
         return self.titles
 
     def journals(self):
